@@ -10,28 +10,41 @@ package com.mycompany.mavenproject1;
  */
 public class OperasiSederhana {
 
-    public static void penjumlahan(int a, int b) {
-        System.out.println("Hasil penjumlahan: " + (a + b));
-    }
-
-    public static void pengurangan(int a, int b) {
-        System.out.println("Hasil pengurangan: " + (a - b));
-    }
-
-    public static void perkalian(int a, int b) {
-        System.out.println("Hasil perkalian: " + (a * b));
-    }
-
-    public static void pembagian(double a, double b) {
-        if (b != 0) {
-            System.out.println("Hasil pembagian: " + (a / b));
-        } else {
-            System.out.println("Error: Pembagian dengan nol tidak diperbolehkan.");
+    public static int penjumlahan(int a, int b) {
+        if (a < -50 || a > 50 || b < -50 || b > 50) {
+            throw new IllegalArgumentException("Input di luar batas -50 hingga 50");
         }
+        return a + b;
     }
 
-    public static void pangkat(int basis, int eksponen) {
-        double hasil = Math.pow(basis, eksponen);
-        System.out.println(basis + " pangkat " + eksponen + " = " + hasil);
+    public static int pengurangan(int a, int b) {
+        if (a < -50 || a > 50 || b < -50 || b > 50) {
+            throw new IllegalArgumentException("Input di luar batas -50 hingga 50");
+        }
+        return a - b;
+    }
+
+    public static int perkalian(int a, int b) {
+        if (a < -50 || a > 50 || b < -50 || b > 50) {
+            throw new IllegalArgumentException("Input di luar batas -50 hingga 50");
+        }
+        return a * b;
+    }
+
+    public static double pembagian(double a, double b) {
+        if (a < -50 || a > 50 || b < -50 || b > 50) {
+            throw new IllegalArgumentException("Input di luar batas -50 hingga 50");
+        }
+        if (b == 0) {
+            throw new ArithmeticException("Tidak bisa membagi dengan nol");
+        }
+        return (double) a / b;
+    }
+
+    public static double pangkat(int basis, int eksponen) {
+        if (basis < -50 || basis > 50 || eksponen < -50 || eksponen > 50) {
+            throw new IllegalArgumentException("Input di luar batas -50 hingga 50");
+        }
+        return Math.pow(basis, eksponen);
     }
 }
